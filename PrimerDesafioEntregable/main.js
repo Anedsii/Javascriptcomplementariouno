@@ -1,14 +1,14 @@
 // Se va crear un simulador de stock de producto 
 //se va tener una base de datos de componentes electronicos, quimicos y de mecanica 
 
-var id= "001";
-var producto = "Transistor IGBT";
-var stock = 10;
-var minstock= 2;
-var maxstrock=5;
-var stockreal=0;
-var estado= "compra";
-var provedor = "microelectronica";
+let id= "001";
+let producto = "Transistor IGBT";
+let stock = 10;
+let minstock= 2;
+let maxstrock=5;
+let stockreal=0;
+let estado= "compra";
+let provedor = "microelectronica";
 
 var validar = true;
 
