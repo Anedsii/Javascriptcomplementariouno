@@ -1,2 +1,7 @@
-* {
-  background: blue; }
+body h1 {
+  text-align: center; }
+
+body .listas {
+  height: 100vh;
+  width: 100%;
+  background-color: #6fcf6f; }
