@@ -11,6 +11,38 @@
 
 
 */ 
+
+//Funciones MODIFICAR
+
+function modificar(datos,ID){
+    let modificado = [];
+    for(let i=0; i<datos.length;i++){
+        
+        if(datos[i].id == ID){
+            datos[i].componente = prompt("Ingrese mod componente");
+            datos[i].estado = prompt("Estado:");
+            modificado.push(datos[i]);
+        }else{
+            modificado.push(datos[i]);
+        }
+    }
+
+
+    return modificado;
+}
+
+//Filtrado por estado
+function stado(datos){
+    let estado = [];
+    for(let i=0; i<datos.length;i++){
+        if(datos[i].estado == "comprar"){
+            estado.push(datos[i]);
+        }
+    }
+
+
+    return estado;
+}
 //Busqueda
 
 //ID
@@ -98,3 +130,14 @@ console.log("Ver listado");
 for (let i = 0; i < productos_data.length; i++){
     console.log(productos_data[i]);
 }
+
+//ver listado de comprar
+
+console.log("Ver listado de comprar");
+console.log(stado(productos_data));
+
+//modificar por ID
+
+console.log("Modificar");
+productos_data = modificar(productos_data,prompt("Ingrese id modification"));
+console.log(productos_data);
