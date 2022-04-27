@@ -92,3 +92,9 @@ console.log(buscarid(prompt("ingrese id del producto a buscar"),productos_data))
 
 console.log("Buscar nombre");
 console.log(buscarno(prompt("ingrese nombre del producto a buscar"),productos_data));
+
+//Ver listado
+console.log("Ver listado");
+for (let i = 0; i < productos_data.length; i++){
+    console.log(productos_data[i]);
+}
