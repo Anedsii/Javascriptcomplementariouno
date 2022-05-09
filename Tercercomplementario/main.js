@@ -10,3 +10,5 @@ function guardar(){
    	btn.innerHTML=fila;
     document.getElementById("tabla").appendChild(btn);
 }
+
+//Ingreso de datos interactuando con HTML
