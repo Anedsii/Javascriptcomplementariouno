@@ -3,13 +3,54 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregando Fetch</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Bienvenido</title>
+    <style>
+        body {
+            background-color: rgb(167, 190, 231);
+        }
+        
+        table thead {
+            background: #67ceb7;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Sensor</th>
+                    <th>Valor</th>
 
+                </tr>
+            </thead>
+            <tbody id="data">
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script>
+        setInterval(function() {
+            let url = 'https://script.googleusercontent.com/macros/echo?user_content_key=ag5mF7et3SksGG88oR3dQDA7IDLOHKyjy7E1IovG5rzqRg_0-oFxI_I91tkS8OuxrCCUs5yLNAuZoDb611ZxzyjMjQxWobDAm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFFmVWUCbnlSQGXiYK9H8GshoCjUAJrC5svirlfj2MJWI6zvndoZiNmH6HbmXCqQxHU98P6KO5XBuNohf8OssGxxe8dkPacKcdz9Jw9Md8uu&lib=MVqGNRiinXwUgtU0oKg0dcnT2xDUZaPi5';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => mostrarData(data))
+                .catch(error => console.log(error))
+            const mostrarData = (data) => {
+                console.log(data)
+                let body = ""
+                for (var i = 0; i < data.length; i++) {
+                    body += `<tr><td>${data[i].id}</td><td>${data[i].nombre}</td></tr>`
+                }
+                document.getElementById('data').innerHTML = body
+            }
+        }, 1000);
+    </script>
 </body>
 
 </html>
